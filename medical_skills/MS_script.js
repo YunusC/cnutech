@@ -23,12 +23,6 @@ function determinePath(answer, currentNode)
 		return currentNode.left;
 }
 
-function main()
-{
-	$("h3").text("Hello World!");
-	console.log("cool beans");
-}
-
 function picture()
 {
 	document.getElementById("symptom_header").innerHTML = "Please Choose a Symptom"; 
@@ -41,7 +35,7 @@ function picture()
 
 function question()
 {
-	document.getElementById("ques").innerHTML = b;
+	//document.getElementById("ques").innerHTML = b;
 	document.getElementById("symptom_header").innerHTML = "Please Choose an Answer"
 	document.getElementById("li0").innerHTML = "No";
 	document.getElementById("li1").innerHTML = "Yes";
