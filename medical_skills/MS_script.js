@@ -1,21 +1,19 @@
 
-class Node
-{
-	constructor(data)
-	{
-		this.data = data;
-		this.left = null;
-		this.right = null;
-	}
+function Node(data) {
+    this.data = data;
+    this.parent = null;
+    this.children = [];
 }
 
-class Tree
-{
-	constructor(data)
-	{
-		this.root = new Node(data);
-	}
+function Tree(data) {
+    var node = new Node(data);
+    this._root = node;
 }
+
+var sore_throat = new Tree('Is there a fever?');
+var currNode = sore_throat._root;
+currNode.children[0] = new Node('Is it difficult to swallow liquids?')
+currNode.children[1] = new Node('Have you had recent weight lost?')
 
 function determinePath(answer, currentNode)
 {	
@@ -43,14 +41,25 @@ function picture()
 
 function question()
 {
-	document.getElementById("ques").innerHTML = "Is There Pain Associated?"
+	document.getElementById("ques").innerHTML = b;
 	document.getElementById("symptom_header").innerHTML = "Please Choose an Answer"
-	document.getElementById("li0").innerHTML = "Yes";
-	document.getElementById("li1").innerHTML = "No";
+	document.getElementById("li0").innerHTML = "No";
+	document.getElementById("li1").innerHTML = "Yes";
 	document.getElementById("li2").innerHTML = "n/a";
 	document.getElementById("li3").innerHTML = "n/a";
 	document.getElementById("li4").innerHTML = "n/a";
 }
+
+function qT()
+{
+
+}
+
+function qF()
+{
+
+}
+
 // main()
 // {
 // 	Tree banana("Begin Diagnosis?");

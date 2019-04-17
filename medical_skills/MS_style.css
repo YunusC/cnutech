@@ -40,14 +40,17 @@ h3
 
 .human_pic
 {
+	position: relative;
+  	width: 100%;
+  	max-width: 400px;
 	display: block;
  	margin-left: auto;
   	margin-right: auto;
 }
-.container img 
+.human_pic img 
 {
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 100%;
 }
 
 .human_pic .button 
@@ -55,9 +58,10 @@ h3
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-75%, -1100%);
-  -ms-transform: translate(-50%, -50%);
+  transform: translate(-80%, -1375%);
+  -ms-transform: translate(0%, 0%);
   background-color: "Azure";
+  text-align: center;
   color: white;
   font-size: 16px;
   padding: 6px 12px;
