@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html class="generalText">
+<head>
+	<meta charset="utf-8">
+	<title>Medical Schools Learning Tool</title>
+	<link rel="stylesheet" type="text/css" href="MS_style.css">
+	<script type="text/javascript" src="MS_script.js"></script>
+</head>
+<body>
+	<a href="https://www.cnsu.edu/" target="_blank" title="Click for Main Website">
+		<img src="CNU_Logo_English.png" style="width:222px;height:74px" alt="CNU Logo" href="https://www.cnsu.edu/" target="_blank" title="Main Website">
+	</a>
+	<h1>Medical Skills Learning Tool</h1>
+	<!-- <input type="date" id="dobInput"> -->
+	<h3 id="ques"></h3>
+	<a id="name">Name:</a>
+	<input type="text" class="generalText input" value="Insert Name Here" id="nameInput">
+	<button id="nameButton" onclick="namefunc()">Submit Name</button>
+	<br>
+	<a id="dob">Date of Birth:</a>
+	<input id="dobInput" type="date" class="generalText input">
+	<button id="dobButton" onclick="dobfunc()">Submit DOB</button>
+	<br>
+	<a id="MR">MR:</a>
+	<input id="MRInput" type="number" value="00000000" class="generalText input" >
+	<button id="MRButton" onclick="MRfunc()">Submit MR</button>
+	<br>
+	<a id="CC">Chief Complaint:</a>
+	<input  id="CCInput" type="text" class="generalText input" value="Insert Chief Complaint">
+	<button id="CCButton" onclick="CCfunc()">Submit CC</button>
+	<br>
+	<br>
+	<div class="questions" id="question"></div>
+	<button class="buttons" onclick="prev()">Prev</button>
+	<button class="buttons" onclick="next()">Next</button>
+	<div class="newInfo"></div>
+	<footer></footer>
+</body>
+</html> 

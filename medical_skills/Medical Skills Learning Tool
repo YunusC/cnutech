@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html class="generalText">
+<head>
+	<meta charset="utf-8">
+	<title>Medical Schools Learning Tool</title>
+	<link rel="stylesheet" type="text/css" href="MS_style.css">
+	<script type="text/javascript" src="MS_script.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">></script>
+	<script>
+		$(document).ready
+		(function()
+			{
+	  			$("button").click(function()
+	  				{
+	    			$("div.ul.li").text("Insert Question Here?");
+	  				}
+	  				);
+			}
+		);
+	</script>
+</head>
+<body>
+	<a href="https://www.cnsu.edu/" target="_blank" title="Click for Main Website">
+		<img src="CNU_Logo_English.png" style="width:111px;height:37px" alt="CNU Logo" href="https://www.cnsu.edu/" target="_blank" title="Main Website">
+	</a>
+	<h1>Medical Skills Learning Tool</h1>
+	<a style="text-align: center;" class="human_pic">
+		<img class="human_pic" style="display: flex; justify-content: center;"  src="human_body.jpg" alt="Human Body">
+		<button class="button" title="Neck" onclick="picture()"></button>
+	</a>
+	<!-- <h2>Chief Complaint:</h2>
+		<p class="problems">Blood in Urine</p> -->
+	<h3 id="ques"></h3>
+	<!-- <button type="yes" onclick="picture()">Yes</button><button>No</button> -->
+	<h4 class="newInfo" id="symptom_header">Please Select a Body Part</h4>
+	<div class="newInfo">
+		<ul>
+			<li id="li0" onclick="question()"></li>
+			<li id="li1"></li>
+			<li id="li2"></li>
+			<li id="li3"></li>
+			<li id="li4"></li>
+		</ul>
+	</div>
+	<footer>CNSU 2019</footer>
+</body>
+</html> 

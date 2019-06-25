@@ -1,4 +1,128 @@
+var name;
+var dob;
+var MR;
+var CC;
+var counter = 0;
+var ending = 0;
+var ids = ["1" ,"2", "3"];
+var questions = ["","question 1","question 2","question 3","question 4"];
 
+function prev()
+{
+	if(counter <= 0)
+		return;
+	if(!ending)
+		counter--;
+	else
+	{
+		var i = 0;
+		while(i < ids.length)
+		{
+			document.getElementById(ids[i]).remove();
+			i++;
+		}
+		ending = 0;
+	}
+	document.getElementById("question").innerHTML = questions[counter];
+}
+
+function next()
+{
+	if(counter >= questions.length - 1)
+	{	
+		end();
+		return;
+	}
+	counter++;
+	document.getElementById("question").innerHTML = questions[counter];
+}
+
+
+function end()
+{
+	if(ending)
+		return;
+	var i = 0;
+	var a = [];
+	while(i < ids.length)
+	{
+		a.push(document.createElement("button"));
+		a[i].setAttribute("id",ids[i]);
+		a[i].setAttribute("class", "buttons");
+		i++;
+	}
+	a[0].setAttribute("onclick","window.location.href = 'unary.html';");
+	a[0].setAttribute("target","_blank");
+	i = 1
+	while(i < ids.length)
+	{
+		a[i].setAttribute("onclick","wrongChoice()");
+		i++;
+	}
+	var b = []; 
+	b.push(document.createTextNode("Unilateral"));
+	b.push(document.createTextNode("Bilateral"));
+	b.push(document.createTextNode("Something else"));
+  	i = 0;
+  	while(i < ids.length)
+  	{
+		a[i].appendChild(b[i]);
+  		document.body.appendChild(a[i]);
+  		i++;
+	}
+  	ending = 1;
+}
+
+function wrongChoice()
+{
+	document.getElementById("question").innerHTML = "Should've chosen the other one";
+}
+
+function namefunc()
+{
+    name = document.getElementById("nameInput").value;
+    document.getElementById("nameInput").remove();
+    document.getElementById("nameButton").remove();
+    document.getElementById("name").innerHTML = "Name: "+name;
+}
+
+function dobfunc()
+{
+   dob = document.getElementById("dobInput").value;
+   document.getElementById("dobInput").remove();
+   document.getElementById("dobButton").remove();
+   document.getElementById("dob").innerHTML = "Date of Birth: " + dob;
+}
+
+function MRfunc()
+{
+  MR = document.getElementById("MRInput").value;
+  document.getElementById("MRInput").remove();
+  document.getElementById("MRButton").remove();
+  document.getElementById("MR").innerHTML = "MR: " + MR;
+}
+
+function CCfunc()
+{
+  CC = document.getElementById("CCInput").value;
+  document.getElementById("CCInput").remove();
+  document.getElementById("CCButton").remove();
+  document.getElementById("CC").innerHTML = "Chief Complaint: " + CC;
+}
+/*
+function test()
+{
+	var h = document.createElement("div");
+	h.setAttribute("id",id[counter]);
+    var t = document.createTextNode(questions[counter]);
+  	h.appendChild(t);
+  	document.body.appendChild(h);
+ }
+
+ function lit()
+ {
+ 	document.getElementById("question").innerHTML = "cool beans";
+ }
 function Node(data) {
     this.data = data;
     this.parent = null;
@@ -23,48 +147,9 @@ function determinePath(answer, currentNode)
 		return currentNode.left;
 }
 
-function picture()
+function dob()
 {
-	document.getElementById("symptom_header").innerHTML = "Please Choose a Symptom"; 
-	document.getElementById("li0").innerHTML = "Sore Throat";
-	document.getElementById("li1").innerHTML = "B";
-	document.getElementById("li2").innerHTML = "C";
-	document.getElementById("li3").innerHTML = "D";
-	document.getElementById("li4").innerHTML = "E";
+	var x = document.getElementById("dobInput").value;
+ 	document.getElementById("dobOutput").innerHTML = x;
 }
-
-function question()
-{
-	//document.getElementById("ques").innerHTML = b;
-	document.getElementById("symptom_header").innerHTML = "Please Choose an Answer"
-	document.getElementById("li0").innerHTML = "No";
-	document.getElementById("li1").innerHTML = "Yes";
-	document.getElementById("li2").innerHTML = "n/a";
-	document.getElementById("li3").innerHTML = "n/a";
-	document.getElementById("li4").innerHTML = "n/a";
-}
-
-function qT()
-{
-
-}
-
-function qF()
-{
-
-}
-
-// main()
-// {
-// 	Tree banana("Begin Diagnosis?");
-// 	var currentNode = banana.root;
-// 	while(currentNode.left != null && currentNode.right != null)
-// 	{
-// 		console.log(currentNode.data);
-// 		console.log('\n')
-// 		currentNode = determinePath(answer, currentNode);
-// 	}
-// 	console.log("Diagnosis is");
-// 	console.log('\n');
-// 	console.log(currentNode.data);
-// }
+ */
