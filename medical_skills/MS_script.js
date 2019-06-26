@@ -5,7 +5,14 @@ var CC;
 var counter = 0;
 var ending = 0;
 var ids = ["1" ,"2", "3"];
-var questions = ["","question 1","question 2","question 3","question 4"];
+var questions = ["",
+"What are the common risk factors?(Age, Genetics, Inheritence, Sex)",
+"How was the patient's health before incidence?",
+"Onset, duration, and frequency of problem?",
+"What are the anatomical structures involved?",
+"Symptoms and severity: Scale from 1-10, continuous or intermittent",
+"Quality of pain?","What makes it worse and what makes it better?",
+"What are the associated symptoms:fever, B symptoms, myalgia's, arthralgia's, nausea, vomiting, diarrhea"];
 
 function prev()
 {
@@ -51,8 +58,8 @@ function end()
 		a[i].setAttribute("class", "buttons");
 		i++;
 	}
+	a[0].setAttribute("target", "'_blank'");
 	a[0].setAttribute("onclick","window.location.href = 'unary.html';");
-	a[0].setAttribute("target","_blank");
 	i = 1
 	while(i < ids.length)
 	{
@@ -62,7 +69,7 @@ function end()
 	var b = []; 
 	b.push(document.createTextNode("Unilateral"));
 	b.push(document.createTextNode("Bilateral"));
-	b.push(document.createTextNode("Something else"));
+	b.push(document.createTextNode("Systemic"));
   	i = 0;
   	while(i < ids.length)
   	{
@@ -99,7 +106,7 @@ function MRfunc()
   MR = document.getElementById("MRInput").value;
   document.getElementById("MRInput").remove();
   document.getElementById("MRButton").remove();
-  document.getElementById("MR").innerHTML = "MR: " + MR;
+  document.getElementById("MR").innerHTML = "MR#: " + MR;
 }
 
 function CCfunc()
