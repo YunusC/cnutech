@@ -6,13 +6,21 @@ var counter = 0;
 var ending = 0;
 var ids = ["1" ,"2", "3"];
 var questions = ["",
-"What are the common risk factors?(Age, Genetics, Inheritence, Sex)",
+"What are the common risk factors?",
 "How was the patient's health before incidence?",
 "Onset, duration, and frequency of problem?",
 "What are the anatomical structures involved?",
 "Symptoms and severity: Scale from 1-10, continuous or intermittent",
-"Quality of pain?","What makes it worse and what makes it better?",
-"What are the associated symptoms:fever, B symptoms, myalgia's, arthralgia's, nausea, vomiting, diarrhea"];
+"Quality of pain?",
+"What makes it worse and what makes it better?",
+"What are the associated symptoms?",
+"Past medical history: Childhood illnesses, adult illnesses, accidents & injuries",
+"Past surgical history: Hospitalizations, surgeries",
+"Medications",
+"Allergies/Immunizations",
+"Social History: Smoking History, Alcohol History, Recreational drug use, Sexual History, Travel history, Employment history" ,
+"Family History",
+"Review of systems: Consitutional, HEENT, Heme/Lymph, Pulmonary, Cardiac, Endocrine, Gastrointestinal, Genutourinary(Ob/Gyn), Musculoskeletal, Nuerologic, Skin, Psychiatric"];
 
 function prev()
 {
