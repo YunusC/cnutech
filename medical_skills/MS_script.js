@@ -20,7 +20,7 @@ var questions = ["",
 "Allergies/Immunizations",
 "Social History: Smoking History, Alcohol History, Recreational drug use, Sexual History, Travel history, Employment history" ,
 "Family History",
-"Review of systems: Consitutional, HEENT, Heme/Lymph, Pulmonary, Cardiac, Endocrine, Gastrointestinal, Genutourinary(Ob/Gyn), Musculoskeletal, Nuerologic, Skin, Psychiatric"];
+"Review of systems:\nConsitutional,\nHEENT,\nHeme/Lymph,\nPulmonary,\nCardiac,\nEndocrine,\nGastrointestinal,\nGenutourinary(Ob/Gyn),\nMusculoskeletal,\nNeurologic,\nSkin,\nPsychiatric"];
 
 function prev()
 {

@@ -25,24 +25,34 @@
 		<img src="../CNU_Logo_English.png" style="width:222px;height:74px" alt="CNU Logo" href="https://www.cnsu.edu/" target="_blank" title="Main Website">
 	</a>
 	<br>
-	<a href="MSLT.html">Back to Beginning</a>
+	<a class="center" href="MSLT.html">Back to Beginning</a>
 	<h1>Medical Skills Learning Tool</h1>
-	<a style="text-align: center;" class="human_pic">
-		<img class="human_pic" style="display: flex; justify-content: center;"  src="human_body.jpg" alt="Human Body">
-		<button class="button" title="Neck" onclick="picture()"></button>
-	</a>
+	<div class="row">
+		<div id="examPointers" class="column">
+			<h4>Critical Examination Points</h4>
+		</div>
+		<div class="column">
+			<h4>Please Select a Body Part</h4>
+			<img  width="237" height="535"  src="human_body.jpg" alt="Human Body" usemap="#bodymap">
+			<map name="bodymap">
+				<area onclick="neck()" shape="rect" coords="95,95,128,115" >
+			</map>
+		</div>
+	</div>
+	<!--
 	<h3 id="ques"></h3>
-	<!-- <button type="yes" onclick="picture()">Yes</button><button>No</button> -->
+	<button type="yes" onclick="picture()">Yes</button><button>No</button> 
 	<h4 class="newInfo" id="symptom_header">Please Select a Body Part</h4>
 	<div class="newInfo">
 		<ul>
 			<li id="li0" onclick="question()"></li>
-			<li id="li1"></li>
+			<li id="li1">style="display: flex; justify-content: center;"</li>
 			<li id="li2"></li>
 			<li id="li3"></li>
 			<li id="li4"></li>
 		</ul>
 	</div>
 	<footer></footer>
+	-->
 </body>
 </html> 

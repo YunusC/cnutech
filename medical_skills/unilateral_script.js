@@ -1,37 +1,53 @@
 
-function Node(data) {
-    this.data = data;
-    this.parent = null;
-    this.children = [];
-}
-
-function Tree(data) {
-    var node = new Node(data);
-    this._root = node;
-}
-
-var sore_throat = new Tree('Is there a fever?');
-var currNode = sore_throat._root;
-currNode.children[0] = new Node('Is it difficult to swallow liquids?')
-currNode.children[1] = new Node('Have you had recent weight lost?')
-
-function determinePath(answer, currentNode)
-{	
-	if(answer == true)
-		return currentNode.right;
-	else
-		return currentNode.left;
-}
-
-function picture()
+var critical = [];
+var locale = [];
+var neckCritical = ["Mass presence", "Absess" , "Redness", "Discharge"];
+var neckLocale = ["Upper" ,  "Middle", "Lower"];
+var checkOutput = 0;
+function output()
 {
-	document.getElementById("symptom_header").innerHTML = "Please Choose a Symptom"; 
-	document.getElementById("li0").innerHTML = "Sore Throat";
-	document.getElementById("li1").innerHTML = "B";
-	document.getElementById("li2").innerHTML = "C";
-	document.getElementById("li3").innerHTML = "D";
-	document.getElementById("li4").innerHTML = "E";
+	if(checkOutput == 1)
+		return;
+	var i = 0;
+	var ul0 = document.createElement("ul");
+	ul0.setAttribute("id","symptoms");
+	while(i < critical.length)
+	{
+		var x = document.createElement("li");
+		x.appendChild(document.createTextNode(critical[i]));
+		ul0.appendChild(x);
+		i++;
+	}
+	i = 0;
+	var ul1 = document.createElement("ul");
+	ul1.setAttribute("id","locale");
+	while(i < locale.length)
+	{
+		var x = document.createElement("li");
+		x.appendChild(document.createTextNode(locale[i]));
+		ul1.appendChild(x);
+		i++;
+	}
+	var h0 = document.createElement("p");
+	h0.innerHTML = "Symptoms:";
+	var h1 = document.createElement("p");
+	h1.innerHTML = "Locations:";
+	var a = document.getElementById("examPointers");
+	a.appendChild(h0);
+	a.appendChild(ul0);
+	a.appendChild(h1);
+	a.appendChild(ul1);
+	checkOutput = 1;
 }
+
+function neck()
+{
+	critical = neckCritical;
+	locale = neckLocale;
+	output();
+}
+
+
 
 function question()
 {
@@ -43,28 +59,3 @@ function question()
 	document.getElementById("li3").innerHTML = "n/a";
 	document.getElementById("li4").innerHTML = "n/a";
 }
-
-function qT()
-{
-
-}
-
-function qF()
-{
-
-}
-
-// main()
-// {
-// 	Tree banana("Begin Diagnosis?");
-// 	var currentNode = banana.root;
-// 	while(currentNode.left != null && currentNode.right != null)
-// 	{
-// 		console.log(currentNode.data);
-// 		console.log('\n')
-// 		currentNode = determinePath(answer, currentNode);
-// 	}
-// 	console.log("Diagnosis is");
-// 	console.log('\n');
-// 	console.log(currentNode.data);
-// }
