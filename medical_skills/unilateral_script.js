@@ -4,6 +4,8 @@ var locale = [];
 var neckCritical = ["Mass presence", "Absess" , "Redness", "Discharge"];
 var neckLocale = ["Upper" ,  "Middle", "Lower"];
 var checkOutput = 0;
+var bodyPart;
+
 function output()
 {
 	if(checkOutput == 1)
@@ -32,30 +34,30 @@ function output()
 	h0.innerHTML = "Symptoms:";
 	var h1 = document.createElement("p");
 	h1.innerHTML = "Locations:";
-	var a = document.getElementById("examPointers");
+	var a = document.createElement("a");
+	var b = document.getElementById("pointersHeader");
+	a.setAttribute("id","examPointers")
+	b.appendChild(a);
 	a.appendChild(h0);
 	a.appendChild(ul0);
 	a.appendChild(h1);
 	a.appendChild(ul1);
+	var header = document.getElementById("bodyPart");
+	header.innerHTML = bodyPart;
 	checkOutput = 1;
+}
+
+function reset()
+{
+	document.getElementById("examPointers").remove();
+	document.getElementById("bodyPart").innerHTML = "Please Select a Body Part";
+	checkOutput = 0;
 }
 
 function neck()
 {
 	critical = neckCritical;
 	locale = neckLocale;
+	bodyPart = "Neck";
 	output();
-}
-
-
-
-function question()
-{
-	//document.getElementById("ques").innerHTML = b;
-	document.getElementById("symptom_header").innerHTML = "Please Choose an Answer"
-	document.getElementById("li0").innerHTML = "No";
-	document.getElementById("li1").innerHTML = "Yes";
-	document.getElementById("li2").innerHTML = "n/a";
-	document.getElementById("li3").innerHTML = "n/a";
-	document.getElementById("li4").innerHTML = "n/a";
 }
