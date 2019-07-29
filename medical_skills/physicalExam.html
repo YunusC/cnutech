@@ -16,13 +16,21 @@
 	<h1>Medical Skills Learning Tool</h1>
 	<div class="row">
 		<div id="pointersHeader" class="column">
-			<h4>Critical Examination Points</h4>
+			<h4>Physical Examination</h4>
 		</div>
 		<div class="column">
 			<h4 id="bodyPart">Please Select a Body Part</h4>
-			<img  width="237" height="535"  src="human_body.jpg" alt="Human Body" usemap="#bodymap">
+			<img  id="bodypic" width="237" height="535"  src="human_body2.jpg" alt="Human Body" usemap="#bodymap">
 			<map name="bodymap">
-				<area onclick="neck()" title="Neck" shape="rect" coords="95,95,128,115" >
+				<area onclick="headfunc()" title="Head" coords="100,107,125,108,129,94,139,75,133,51,112,39,96,46,85,70" shape="poly">
+			</map>
+			<map name="headmap">
+				<area  onclick="headTop()" alt="Head Top" title="Head Top" coords="89,119,320,119,305,65,242,21,156,27,94,86" shape="poly">
+    			<area  onclick="neck()" alt="Neck" title="Neck"  coords="119,252,117,350,249,351,249,308,197,308,197,254" shape="poly">
+			    <area  onclick="mouth()" alt="Mouth" title="Mouth"  coords="209,294,305,299,311,227,210,227" shape="poly">
+			    <area  onclick="nose()" alt="Nose" title="Nose"  coords="209,210,335,212,321,177,210,179" shape="poly">
+			    <area  onclick="eyes()" alt="Eyes" title="Eyes"  coords="315,162,213,159,213,132,314,132" shape="poly">
+			    <area  onclick="ears()" alt="Ears" title="Ears" coords="110,236,191,237,197,134,92,135" shape="poly">
 			</map>
 			<button class="buttons" onclick="reset()">Reset</button>
 		</div>

@@ -1,6 +1,7 @@
 var name;
 var dob;
 var CC;
+var CCchosen = 0;
 var counter = 0;
 var ending = 0;
 var hintOutputted = 0;
@@ -35,8 +36,8 @@ var information = ["",
 "Quality of pain?",
 "What makes it worse and what makes it better?",
 "What are the associated symptoms?",
-"Past medical history: Childhood illnesses, adult illnesses, accidents & injuries",
-"Past surgical history: Hospitalizations, surgeries",
+"Past medical history", "/Childhood illnesses", "/Adult illnesses", "/Accidents & Injuries",
+"Past surgical history" ,"/Hospitalizations", "/Surgeries",
 "Medications",
 "Allergies/Immunizations",
 "Social History", "/Smoking History", "/Alcohol History", "/Recreational drug use", "/Sexual History", "/Travel history", "/Employment history" ,
@@ -83,6 +84,12 @@ function prev()
 
 function next()
 {
+	if(!CCchosen)
+	{
+		var x = document.getElementById("question");
+		x.innerHTML = "Please Choose a Chief Complaint";
+		return;
+	}
 	if(counter >= questions.length - 1)
 	{	
 		end();
@@ -93,7 +100,6 @@ function next()
 	hintOutputted = 0;
 	document.getElementById("question").innerHTML = questions[counter].getQuestion();
 }
-
 
 function end()
 {
@@ -171,7 +177,14 @@ function dobfunc()
 function CCfunc()
 {
   CC = document.getElementById("CCInput").value;
+  if(!CC)
+  {
+  	document.getElementById("question").innerHTML = "Please Choose a Chief Complaint";
+  	return;
+  }
   document.getElementById("CCInput").remove();
   document.getElementById("CCButton").remove();
   document.getElementById("CC").innerHTML = "Chief Complaint: " + CC;
+  document.getElementById("question").innerHTML = "";
+  CCchosen = 1;
 }
