@@ -34,6 +34,7 @@ var soreThroatQuestions = ["",
 "What were you doing when it began?",
 "Have you been around anyone else recently? Have you been around anyone with strep throat?",
 "Have you had a cough?",
+"Do you have a runny nose",
 "Have you had a fever and/or chills?",
 "Has your voice changed?",
 "Can you swallow OK?",
@@ -42,7 +43,6 @@ var soreThroatQuestions = ["",
 "What’s happened since it started?",
 "What’s going on now?",
 "Relevant social history", "/Have you been around anyone ill with similar symptoms?", "/Have you had oral sex recently?", "/Do you smoke?",
-"Relevant ROS:",
 "Pulmonary", "/Do you have a cough?",
 "Gastrointestinal" , "/Difficulty swallowing?", "/Pain with swallowing?", "/Do you experience heartburn?", "/Do you experience a bad taste in your mouth, perhaps at night?",
 "Genitourinary(Ob/Gyn)", "/Pain with urination?", "/Vaginal discharge?", "/New sexual partner?",
@@ -65,8 +65,8 @@ var genQuestions = [
 "Past surgical history" ,"/Hospitalizations", "/Surgeries",
 "Medications",
 "Allergies/Immunizations",
-"Social history", "/Smoking history", "/Alcohol history", "/Recreational drug use", "/Sexual history", "/Travel history", "/Employment history" ,
 "Family History",
+"Social history", "/Smoking history", "/Alcohol history", "/Recreational drug use", "/Sexual history", "/Travel history", "/Employment history" ,
 "Review of systems", "/Consitutional", "/HEENT" ,"/Heme/Lymph","/Pulmonary","/Cardiac","/Endocrine","/Gastrointestinal" ,"/Genutourinary(Ob/Gyn)","/Musculoskeletal" ,"/Neurologic","/Skin","/Psychiatric"];
 
 var i = 0;
@@ -83,7 +83,8 @@ function prev()
 	}
 	else
 	{
-		document.getElementById("endButton").remove();
+		//this needs to be changed
+		//document.getElementById("endButton").remove();
 		ending = 0;
 	}
 	document.getElementById("question").innerHTML = questions[counter].getQuestion();
@@ -116,14 +117,14 @@ function end()
 		return;
 	document.getElementById("hint").remove();
 	document.getElementById("question").innerHTML = "Completed Questioning"
-	var l = document.createElement("div");
+	/*var l = document.createElement("div");
 	l.setAttribute("id", "endButton");
 	var h = document.createElement("button");
 	h.innerHTML = "Proceed to Physical Examination";
 	h.setAttribute("class", "buttons");
 	h.setAttribute("onclick" , "window.location.href = 'physicalExam.html';")
 	document.body.appendChild(l);
-	l.appendChild(h);
+	l.appendChild(h);*/
   	ending = 1;
 }
 
@@ -200,7 +201,7 @@ function CCfunc()
   	information = soreThroatQuestions;
   if(CC == "Chief Complaint 2")
   	information = chiefComplaint2Questions;
-  if(CC == "Chief Complaint 3")
+  if(CC == "Well Visit")
   	information = [""];
   information = information.concat(genQuestions);
   while(i < information.length)
